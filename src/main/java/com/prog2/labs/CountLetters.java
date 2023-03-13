@@ -16,7 +16,11 @@ public class CountLetters {
 		
 		// count frequency of each letter in string
 		for(int i = 0; i < word.length(); i++) {
+			try {
 			counts[word.charAt(i) - 'A']++;
+			} catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("'" + word.charAt(i) + "' is not a letter");
+		}
 		}
 		
 		// print frequencies
